@@ -134,6 +134,7 @@ export default function PaperExample() {
   }, []);
 
   React.useEffect(() => {
+    I18nManager.forceRTL(true);
     const savePrefs = async () => {
       try {
         await AsyncStorage.setItem(
@@ -149,7 +150,15 @@ export default function PaperExample() {
 
       if (I18nManager.getConstants().isRTL !== rtl) {
         I18nManager.forceRTL(rtl);
-        Updates.reloadAsync();
+        try {
+          // You cannot use the Updates module in development mode in a production app.
+          // To test manual updates, publish your project using `expo publish` and open
+          // the published version in this development client.
+          // https://docs.expo.dev/versions/latest/sdk/updates/#updatesreloadasync
+          await Updates.reloadAsync();
+        } catch (e) {
+          console.log('Error: Updates.reloadAsync', e);
+        }
       }
     };
 
