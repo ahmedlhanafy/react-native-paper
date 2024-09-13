@@ -20,8 +20,12 @@ import {
   Pressable,
 } from 'react-native';
 
+import {
+  withSafeAreaInsets,
+  WithSafeAreaInsetsProps,
+} from 'react-native-safe-area-context';
+
 import MenuItem from './MenuItem';
-import { APPROX_STATUSBAR_HEIGHT } from '../../constants';
 import { withInternalTheme } from '../../core/theming';
 import type { $Omit, InternalTheme, MD3Elevation } from '../../types';
 import { ElevationLevels } from '../../types';
@@ -30,7 +34,7 @@ import { BackHandler } from '../../utils/BackHandler/BackHandler';
 import Portal from '../Portal/Portal';
 import Surface from '../Surface';
 
-export type Props = {
+export type Props = WithSafeAreaInsetsProps & {
   /**
    * Whether the Menu is currently visible.
    */
@@ -45,10 +49,9 @@ export type Props = {
    */
   anchorPosition?: 'top' | 'bottom';
   /**
-   * Extra margin to add at the top of the menu to account for translucent status bar on Android.
-   * If you are using Expo, we assume translucent status bar and set a height for status bar automatically.
-   * Pass `0` or a custom value to and customize it.
+   * Extra margin to add at the top of the menu to handle specific cases with the status bar on Android.
    * This is automatically handled on iOS.
+   * Pass `0` or a custom value to customize it.
    */
   statusBarHeight?: number;
   /**
@@ -171,11 +174,7 @@ const DEFAULT_MODE = 'elevated';
  * wrapping is not necessary if you use Paper's `Modal` instead.
  */
 class Menu extends React.Component<Props, State> {
-  // @component ./MenuItem.tsx
-  static Item = MenuItem;
-
   static defaultProps = {
-    statusBarHeight: APPROX_STATUSBAR_HEIGHT,
     overlayAccessibilityLabel: 'Close menu',
     testID: 'menu',
   };
@@ -436,6 +435,7 @@ class Menu extends React.Component<Props, State> {
       overlayAccessibilityLabel,
       keyboardShouldPersistTaps,
       testID,
+      insets,
     } = this.props;
 
     const {
@@ -455,7 +455,7 @@ class Menu extends React.Component<Props, State> {
 
     // I don't know why but on Android measure function is wrong by 24
     const additionalVerticalValue = Platform.select({
-      android: statusBarHeight,
+      android: statusBarHeight ?? insets.top,
       default: 0,
     });
 
@@ -706,4 +706,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withInternalTheme(Menu);
+const Component = withInternalTheme(withSafeAreaInsets(Menu));
+Component.displayName = 'Menu';
+
+const MenuComponent = Component as typeof Component & {
+  Item: typeof MenuItem;
+};
+
+// we need to attach MenuItem here instead of a static property otherwise it will be lost after using withSafeAreaInsets
+// @component ./MenuItem.tsx
+MenuComponent.Item = MenuItem;
+
+export default MenuComponent;
