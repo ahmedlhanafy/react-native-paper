@@ -2066,9 +2066,7 @@ exports[`correctly renders left-side affix adornment, and right-side icon adornm
                   "flexGrow": 1,
                   "justifyContent": "center",
                 },
-                {
-                  "borderRadius": 20,
-                },
+                undefined,
               ],
             ]
           }
@@ -2453,9 +2451,7 @@ exports[`correctly renders left-side icon adornment, and right-side affix adornm
                   "flexGrow": 1,
                   "justifyContent": "center",
                 },
-                {
-                  "borderRadius": 20,
-                },
+                undefined,
               ],
             ]
           }
