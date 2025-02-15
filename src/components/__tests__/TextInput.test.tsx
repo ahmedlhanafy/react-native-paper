@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { StyleSheet, Text, Platform, I18nManager, View } from 'react-native';
+import { I18nManager, Platform, StyleSheet, Text, View } from 'react-native';
 
 import { fireEvent, render } from '@testing-library/react-native';
 import color from 'color';
@@ -29,6 +29,12 @@ const style = StyleSheet.create({
   contentStyle: {
     paddingLeft: 20,
   },
+});
+
+// Revert changes to Platform.OS automatically
+const defaultPlatform = Platform.OS;
+beforeEach(() => {
+  Platform.OS = defaultPlatform;
 });
 
 const affixTextValue = '/100';
@@ -239,12 +245,14 @@ it('renders label with correct color when inactive', () => {
   });
 });
 
-it('renders input placeholder initially with an empty space character', () => {
+it('renders input placeholder initially with transparent placeholderTextColor', () => {
   const { getByTestId } = render(
     <TextInput multiline label="Multiline input" testID={'text-input'} />
   );
 
-  expect(getByTestId('text-input').props.placeholder).toBe(' ');
+  expect(getByTestId('text-input').props.placeholderTextColor).toBe(
+    'transparent'
+  );
 });
 
 it('correctly applies padding offset to input label on Android when RTL', () => {

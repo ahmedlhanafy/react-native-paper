@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, Platform } from 'react-native';
 
-import { render } from '@testing-library/react-native';
+import { act, render } from '@testing-library/react-native';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
 
 import PaperProvider from '../../../core/PaperProvider';
@@ -11,8 +11,8 @@ import { tokens } from '../../../styles/themes/v3/tokens';
 import Appbar from '../../Appbar';
 import {
   getAppbarBackgroundColor,
-  modeTextVariant,
   getAppbarBorders,
+  modeTextVariant,
   renderAppbarContent as utilRenderAppbarContent,
 } from '../../Appbar/utils';
 import Menu from '../../Menu/Menu';
@@ -231,10 +231,9 @@ describe('renderAppbarContent', () => {
       </mockSafeAreaContext.SafeAreaProvider>
     );
 
-    expect(getByTestId('appbar-content').props.accessibilityRole).toEqual([
-      'button',
-      'header',
-    ]);
+    expect(getByTestId('appbar-content').props.accessibilityRole).toEqual(
+      'button'
+    );
     expect(
       getByTestId('appbar-content').props.accessibilityState || {}
     ).not.toMatchObject({ disabled: true });
@@ -251,10 +250,9 @@ describe('renderAppbarContent', () => {
       </mockSafeAreaContext.SafeAreaProvider>
     );
 
-    expect(getByTestId('appbar-content').props.accessibilityRole).toEqual([
-      'button',
-      'header',
-    ]);
+    expect(getByTestId('appbar-content').props.accessibilityRole).toEqual(
+      'button'
+    );
     expect(
       getByTestId('appbar-content').props.accessibilityState
     ).toMatchObject({ disabled: true });
@@ -446,7 +444,9 @@ describe('animated value changes correctly', () => {
       duration: 200,
     }).start();
 
-    jest.advanceTimersByTime(200);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
 
     expect(getByTestId('appbar-outer-layer')).toHaveStyle({
       transform: [{ scale: 1.5 }],
@@ -474,7 +474,9 @@ describe('animated value changes correctly', () => {
       duration: 200,
     }).start();
 
-    jest.advanceTimersByTime(200);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
 
     expect(getByTestId('appbar-action-container-outer-layer')).toHaveStyle({
       transform: [{ scale: 1.5 }],
@@ -503,7 +505,9 @@ describe('animated value changes correctly', () => {
       duration: 200,
     }).start();
 
-    jest.advanceTimersByTime(200);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
 
     expect(getByTestId('appbar-back-action-container-outer-layer')).toHaveStyle(
       {
@@ -534,7 +538,9 @@ describe('animated value changes correctly', () => {
       duration: 200,
     }).start();
 
-    jest.advanceTimersByTime(200);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
 
     expect(getByTestId('appbar-header-outer-layer')).toHaveStyle({
       transform: [{ scale: 1.5 }],

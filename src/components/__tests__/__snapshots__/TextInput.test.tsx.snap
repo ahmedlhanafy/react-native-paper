@@ -62,6 +62,9 @@ exports[`call onPress when affix adornment pressed 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -81,7 +84,7 @@ exports[`call onPress when affix adornment pressed 1`] = `
                 "translateX": 0,
               },
             ],
-            "zIndex": 3,
+            "width": 750,
           }
         }
       >
@@ -106,7 +109,7 @@ exports[`call onPress when affix adornment pressed 1`] = `
                 "fontWeight": undefined,
                 "left": 0,
                 "letterSpacing": 0.15,
-                "lineHeight": 19.2,
+                "lineHeight": undefined,
                 "maxWidth": 73,
                 "opacity": 0,
                 "paddingLeft": 16,
@@ -144,7 +147,7 @@ exports[`call onPress when affix adornment pressed 1`] = `
                 "fontWeight": undefined,
                 "left": 0,
                 "letterSpacing": 0.15,
-                "lineHeight": 19.2,
+                "lineHeight": undefined,
                 "maxWidth": 73,
                 "opacity": 0,
                 "paddingLeft": 16,
@@ -181,8 +184,8 @@ exports[`call onPress when affix adornment pressed 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Enter your phone number"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -201,16 +204,14 @@ exports[`call onPress when affix adornment pressed 1`] = `
             "fontSize": 16,
             "fontWeight": undefined,
             "letterSpacing": 0.15,
-            "lineHeight": 19.2,
+            "lineHeight": undefined,
             "minWidth": 65,
             "paddingLeft": 16,
             "paddingRight": 16,
             "textAlign": "left",
             "textAlignVertical": "center",
           },
-          {
-            "outline": "none",
-          },
+          false,
           {
             "marginLeft": 0,
             "paddingLeft": 40,
@@ -264,8 +265,6 @@ exports[`call onPress when affix adornment pressed 1`] = `
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -285,7 +284,7 @@ exports[`call onPress when affix adornment pressed 1`] = `
               "fontSize": 16,
               "fontWeight": undefined,
               "letterSpacing": 0.15,
-              "lineHeight": 19.2,
+              "lineHeight": undefined,
             },
             undefined,
           ]
@@ -361,6 +360,9 @@ exports[`correctly applies a component as the text label 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -381,7 +383,6 @@ exports[`correctly applies a component as the text label 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -497,8 +498,8 @@ exports[`correctly applies a component as the text label 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -601,6 +602,9 @@ exports[`correctly applies cursorColor prop 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -621,7 +625,6 @@ exports[`correctly applies cursorColor prop 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -721,8 +724,8 @@ exports[`correctly applies cursorColor prop 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -825,6 +828,9 @@ exports[`correctly applies default textAlign based on default RTL 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -845,7 +851,6 @@ exports[`correctly applies default textAlign based on default RTL 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -945,8 +950,8 @@ exports[`correctly applies default textAlign based on default RTL 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -1042,6 +1047,9 @@ exports[`correctly applies height to multiline Outline TextInput 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -1062,7 +1070,6 @@ exports[`correctly applies height to multiline Outline TextInput 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -1201,8 +1208,8 @@ exports[`correctly applies height to multiline Outline TextInput 1`] = `
       onChangeText={[Function]}
       onFocus={[Function]}
       onLayout={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type Something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -1306,6 +1313,9 @@ exports[`correctly applies paddingLeft from contentStyleProp 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -1326,7 +1336,6 @@ exports[`correctly applies paddingLeft from contentStyleProp 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -1426,8 +1435,8 @@ exports[`correctly applies paddingLeft from contentStyleProp 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -1532,6 +1541,9 @@ exports[`correctly applies textAlign center 1`] = `
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -1552,7 +1564,6 @@ exports[`correctly applies textAlign center 1`] = `
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -1652,8 +1663,8 @@ exports[`correctly applies textAlign center 1`] = `
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -1756,6 +1767,9 @@ exports[`correctly renders left-side affix adornment, and right-side icon adornm
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -1776,7 +1790,6 @@ exports[`correctly renders left-side affix adornment, and right-side icon adornm
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -1876,8 +1889,8 @@ exports[`correctly renders left-side affix adornment, and right-side icon adornm
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
@@ -2182,6 +2195,9 @@ exports[`correctly renders left-side icon adornment, and right-side affix adornm
           {
             "overflow": "hidden",
           },
+          {
+            "zIndex": 3,
+          },
         ]
       }
     >
@@ -2202,7 +2218,6 @@ exports[`correctly renders left-side icon adornment, and right-side affix adornm
               },
             ],
             "width": 750,
-            "zIndex": 3,
           }
         }
       >
@@ -2302,8 +2317,8 @@ exports[`correctly renders left-side icon adornment, and right-side affix adornm
       onBlur={[Function]}
       onChangeText={[Function]}
       onFocus={[Function]}
-      placeholder=" "
-      placeholderTextColor="rgba(73, 69, 79, 1)"
+      placeholder="Type something"
+      placeholderTextColor="transparent"
       selectionColor="rgba(103, 80, 164, 1)"
       style={
         [
